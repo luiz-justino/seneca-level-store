@@ -3,8 +3,43 @@
 
 # @seneca/level-store
 
+[![npm version][npm-badge]][npm-url]
+[![Build Status][travis-badge]][travis-url]
+[![Coverage Status][coverage-badge]][coverage-url]
+[![Code Climate][codeclimate-badge]][codeclimate-url]
+[![Dependency Status][david-badge]][david-url]
+[![Gitter][gitter-badge]][gitter-url]
+
 | ![Voxgig](https://www.voxgig.com/res/img/vgt01r.png) | This open source module is sponsored and supported by [Voxgig](https://www.voxgig.com). |
 |---|---|
+
+Lead Maintainer: [Blain Smith](https://github.com/blainsmith)
+
+## Description
+
+A storage engine that uses [leveldb][] to persist data. It may also be used as an example on how to
+implement a storage plugin for Seneca using an underlying key-value store.
+
+seneca-level-store's source can be read in an annotated fashion by,
+
+- running `npm run annotate`
+
+The annotated source can be found locally at [./doc/level-store.html](./doc/level-store.html).
+
+If you're using this module, and need help, you can:
+
+- Post a [github issue][],
+- Tweet to [@senecajs][],
+- Ask on the [Gitter][gitter-url].
+
+If you are new to Seneca in general, please take a look at [senecajs.org][]. We have everything from
+tutorials to sample apps to help get you up and running quickly.
+
+### Seneca compatibility
+Supports Seneca versions **1.x**, **2.x** and **3.x**
+
+### Supported functionality
+All Seneca data store supported functionality is implemented in [seneca-store-test](https://github.com/senecajs/seneca-store-test) as a test suite. The tests represent the store functionality specifications.
 
 ## Install
 
