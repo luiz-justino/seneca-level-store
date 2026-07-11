@@ -15,7 +15,7 @@
 
 Lead Maintainer: [Blain Smith](https://github.com/blainsmith)
 
-## Description
+### Description
 
 A storage engine that uses [leveldb][] to persist data. It may also be used as an example on how to
 implement a storage plugin for Seneca using an underlying key-value store.
