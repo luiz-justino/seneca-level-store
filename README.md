@@ -1,7 +1,7 @@
 ![Seneca](http://senecajs.org/files/assets/seneca-logo.png)
 > A [Seneca.js](http://senecajs.org) plugin
 
-# seneca-level-store
+# @seneca/level-store
 
 [![npm version](https://img.shields.io/npm/v/seneca-level-store.svg)](https://npmjs.com/package/seneca-level-store)
 [![build](https://github.com/senecajs/seneca-level-store/actions/workflows/build.yml/badge.svg)](https://github.com/senecajs/seneca-level-store/actions/workflows/build.yml)
