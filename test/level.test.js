@@ -1,49 +1,54 @@
-/* Copyright (c) 2013 Richard Rodger, MIT License */
+'use strict'
 
-/*jslint node: true */
+var _ = require('lodash')
+var Lab = require('lab')
+var Mkdirp = require('mkdirp')
+var OsEnv = require('osenv')
+var Seneca = require('seneca')
+var Shared = require('seneca-store-test')
 
-"use strict";
+var LevelStore = require('..')
 
-var _ = require('lodash');
-var seneca = require('seneca');
-var shared = require('seneca-store-test');
-var fs = require('fs');
-
-var Lab = require('lab');
-var lab = exports.lab = Lab.script();
-
-var describe = lab.describe;
-var it = lab.it;
-
-var tmpdir = require('osenv').tmpdir;
-var dir = tmpdir() + '/test-seneca-level-store';
-require('mkdirp').sync(dir);
-
+// Shortcuts
+var lab = exports.lab = Lab.script()
+var describe = lab.describe
+var before = lab.before
+var dir = OsEnv.tmpdir() + '/test-seneca-level-store'
+Mkdirp.sync(dir)
 
 var incrementConfig = _.assign({
   map: { '-/-/incremental': '*' },
   auto_increment: true
-});
+})
 
-var si = seneca();
-si.use(require('..'), {folder: dir });
-si.use(require('..'), incrementConfig);
+var si = Seneca()
+si.use(LevelStore, { folder: dir })
+si.use(LevelStore, incrementConfig)
+
+if (si.version >= '3.0.0') {
+  si.use(require('seneca-basic'))
+}
+if (si.version >= '2.0.0') {
+  si.use(require('seneca-entity'))
+}
 
 describe('Level Test', function () {
+  before({}, function (done) {
+    si.ready(done)
+  })
 
-   shared.basictest({
+  Shared.basictest({
     seneca: si,
     script: lab
-  });
+  })
 
-  shared.sorttest({
+  Shared.sorttest({
     seneca: si,
     script: lab
-  });
-  
-  shared.limitstest({
+  })
+
+  Shared.limitstest({
     seneca: si,
     script: lab
-  });
-
-});
+  })
+})
