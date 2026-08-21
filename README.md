@@ -94,12 +94,6 @@ The [Senecajs org](https://github.com/senecajs/) encourages open participation. 
 
 This plugin uses the [leveldb][] storage engine.
 
-[![npm version][npm-badge]][npm-url]
-[![Build Status][travis-badge]][travis-url]
-[![Coverage Status][coverage-badge]][coverage-url]
-[![Code Climate][codeclimate-badge]][codeclimate-url]
-[![Dependency Status][david-badge]][david-url]
-[![Gitter][gitter-badge]][gitter-url]
 [MIT]: ./LICENSE
 [Senecajs org]: https://github.com/senecajs/
 [Seneca.js]: https://www.npmjs.com/package/seneca
