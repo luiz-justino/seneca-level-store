@@ -10,13 +10,11 @@
 | ![Voxgig](https://www.voxgig.com/res/img/vgt01r.png) | This open source module is sponsored and supported by [Voxgig](https://www.voxgig.com). |
 |---|---|
 
-A [Seneca.js](http://senecajs.org) entity store using LevelDB.
+A [Seneca.js](http://senecajs.org) entity store using [LevelDB](http://leveldb.org/).
 
 ## Install
 
-To install, simply use npm. Remember you will need to install [Seneca.js][] if you haven't already.
-
-```
+```sh
 npm install seneca
 npm install seneca-level-store
 ```
@@ -47,19 +45,7 @@ See [test/](test/) for more usage examples.
 
 ## Motivation
 
-A storage engine that uses [leveldb][] to persist data.
-
-## Support
-
-If you're using this module and need help, you can:
-
-- Post a [github issue](https://github.com/senecajs/seneca-level-store/issues)
-- Tweet to [@senecajs](http://twitter.com/senecajs)
-- Ask on the [Gitter](https://gitter.im/senecajs/seneca)
-
-## API
-
-You don't use this module directly. It provides an underlying data storage engine for the Seneca entity API:
+A storage engine that uses [LevelDB](http://leveldb.org/) to persist data. You don't use this module directly — it provides an underlying data storage engine for the Seneca entity API:
 
 ```js
 var entity = seneca.make$('typename')
@@ -72,6 +58,15 @@ entity.list$({property: ... }, function (err, entity) { ... })
 entity.remove$({id: ... }, function (err, entity) { ... })
 ```
 
+## Support
+
+If you're using this module and need help, you can:
+
+- Post a [github issue](https://github.com/senecajs/seneca-level-store/issues)
+- Tweet to [@senecajs](http://twitter.com/senecajs)
+- Ask on the [Gitter](https://gitter.im/senecajs/seneca)
+
+## API
 
 ### Query Support
 
@@ -92,11 +87,6 @@ The [Senecajs org](https://github.com/senecajs/) encourages open participation. 
 
 ## Background
 
-This plugin uses the [leveldb][] storage engine.
+This plugin uses the [LevelDB](http://leveldb.org/) storage engine. Supports Seneca versions **1.x**, **2.x** and **3.x**.
 
-[MIT]: ./LICENSE
-[Senecajs org]: https://github.com/senecajs/
-[Seneca.js]: https://www.npmjs.com/package/seneca
-[senecajs.org]: http://senecajs.org/
-[github issue]: https://github.com/rjrodger/seneca-level-store/issues
-[@senecajs]: http://twitter.com/senecajs
+All Seneca data store supported functionality is implemented in [seneca-store-test](https://github.com/senecajs/seneca-store-test) as a test suite. The tests represent the store functionality specifications.
