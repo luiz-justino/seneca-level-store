@@ -10,6 +10,8 @@
 | ![Voxgig](https://www.voxgig.com/res/img/vgt01r.png) | This open source module is sponsored and supported by [Voxgig](https://www.voxgig.com). |
 |---|---|
 
+A [Seneca.js](http://senecajs.org) entity store using LevelDB.
+
 ## Install
 
 To install, simply use npm. Remember you will need to install [Seneca.js][] if you haven't already.
@@ -98,6 +100,7 @@ This plugin uses the [leveldb][] storage engine.
 [![Code Climate][codeclimate-badge]][codeclimate-url]
 [![Dependency Status][david-badge]][david-url]
 [![Gitter][gitter-badge]][gitter-url]
+[MIT]: ./LICENSE
 [Senecajs org]: https://github.com/senecajs/
 [Seneca.js]: https://www.npmjs.com/package/seneca
 [senecajs.org]: http://senecajs.org/
