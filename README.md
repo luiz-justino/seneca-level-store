@@ -39,13 +39,32 @@ seneca.ready(function() {
 })
 ```
 
+To run tests with Docker:
+
+```sh
+docker build -t level-store --no-cache .
+docker run -i level-store
+```
+
 ## More Examples
 
 See [test/](test/) for more usage examples.
 
 ## Motivation
 
-A storage engine that uses [LevelDB](http://leveldb.org/) to persist data. You don't use this module directly — it provides an underlying data storage engine for the Seneca entity API:
+A storage engine that uses [LevelDB](http://leveldb.org/) to persist data. It can also be used as an example of how to implement a Seneca storage plugin using an underlying key-value store.
+
+## Support
+
+If you're using this module and need help, you can:
+
+- Post a [github issue](https://github.com/senecajs/seneca-level-store/issues)
+- Tweet to [@senecajs](http://twitter.com/senecajs)
+- Ask on the [Gitter](https://gitter.im/senecajs/seneca)
+
+## API
+
+You don't use this module directly. It provides an underlying data storage engine for the Seneca entity API:
 
 ```js
 var entity = seneca.make$('typename')
@@ -57,16 +76,6 @@ entity.load$({id: ... }, function (err, entity) { ... })
 entity.list$({property: ... }, function (err, entity) { ... })
 entity.remove$({id: ... }, function (err, entity) { ... })
 ```
-
-## Support
-
-If you're using this module and need help, you can:
-
-- Post a [github issue](https://github.com/senecajs/seneca-level-store/issues)
-- Tweet to [@senecajs](http://twitter.com/senecajs)
-- Ask on the [Gitter](https://gitter.im/senecajs/seneca)
-
-## API
 
 ### Query Support
 
